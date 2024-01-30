@@ -52,9 +52,19 @@ public class Bank {
     public void handleCommand1(String input) {
         // Handle command 1
         String[] nodes = input.split(" ");
-        Node talabkar = customers.insertFirst(nodes[0]);
-        Node bedehkar = customers.insertFirst(nodes[1]);
         float value = Float.parseFloat(nodes[2]);
+
+        Customer talabkar = customers.insertFirst(nodes[0]);
+        //talabkar.accounts = new LinkedList();
+        talabkar.totalExpense += value;
+        talabkar.accounts.insertFirst(nodes[1]).accountedValue += value;
+
+        Customer bedehkar = customers.insertFirst(nodes[1]);
+        //bedehkar.accounts = new LinkedList();
+        bedehkar.totalIncome += value;
+        bedehkar.accounts.insertFirst(nodes[0]).accountedValue -= value;
+        System.out.println(customers.find(talabkar.name).name+" "+customers.find(bedehkar.name).name);
+
     }
 
     public String handleCommand2() {
@@ -73,6 +83,7 @@ public class Bank {
     public String handleCommand4(String input) {
         // Handle command 4
         String result = "";
+        customers.find(input).accounts.print();
         return result;
     }
 
