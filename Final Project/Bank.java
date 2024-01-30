@@ -35,6 +35,12 @@ class Menu {
 }
 
 public class Bank {
+    LinkedList customers;
+    
+    public Bank() {
+        this.customers = new LinkedList();
+    }
+
     public static void main(String[] args) {
         Menu.main();
     }
