@@ -11,9 +11,11 @@ public class LinkedList {
     }
     public Node find(String name) {
         Node result = this.head;
-        for (int i =0 ; i < this.size ; i++,result=result.next)
-            if (result.account.name == name)
+        for (int i =0 ; i < this.size ; i++,result=result.next) {
+            if (result.account.name.equals(name)){
                 return result;
+            }
+        }
         return null;
     }
     public Node insertFirst(String name) {

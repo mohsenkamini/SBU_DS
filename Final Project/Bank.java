@@ -48,7 +48,9 @@ public class Bank {
         // Handle command 1
         String[] nodes = input.split(" ");
         for (int i=0 ; i < nodes.length-1 ; i++ ) //-1 is for x in 1 s_1 s_2 x
+        {
             System.out.println(customers.insertFirst(nodes[i]).account.name);
+        }
     }
 
     public String handleCommand2() {
