@@ -1,12 +1,12 @@
 public class Customer {
     String name;
-    float totalIncome;
-    float totalExpense;
+    float totalIn;
+    float totalOut;
 
     LinkedList accounts;
     float accountedValue; // this value is not global and will only be filled in accounts list.
     public Customer() {
-        totalIncome = 0.00f;
-        totalExpense = 0.00f;
+        totalIn = 0.00f;
+        totalOut = 0.00f;
     }
 }
