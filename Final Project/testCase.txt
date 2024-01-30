@@ -1,0 +1,13 @@
+12
+1 mohsen hamid 5.50
+1 hamid mohsen 5.50
+1 ali mohsen 15.50
+1 mohsen ali 15.50
+1 ali reza 10.00
+1 reza ali 30.00
+1 ali reza 40.00
+7
+8 ali
+8 mohsen
+2
+3
