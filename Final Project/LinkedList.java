@@ -30,12 +30,13 @@ public class LinkedList {
                 temp.next=this.head.next;
                 this.head.account.name=name;
                 this.head.next=temp;
+                result=this.head;
             } else return result;
         }
         this.size++;
         return result;
     }
-    public int getName(int index) {
+    public String getName(int index) {
         Node temp = this.head;
         for (int i =0 ; i < index ; i++)
         {
@@ -45,6 +46,7 @@ public class LinkedList {
     }
     public void print() {
         Node temp = this.head;
+        System.out.println("The list size is: "+this.size);
         for (int i=0 ; i < this.size ; i++) {
             System.out.print(temp.account.name);
             temp=temp.next;
@@ -57,4 +59,7 @@ public class LinkedList {
 class Node {
     Account account;
     Node next;
+    public Node () {
+        this.account = new Account();
+    }
 }

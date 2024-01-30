@@ -36,7 +36,7 @@ class Menu {
 
 public class Bank {
     LinkedList customers;
-    
+
     public Bank() {
         this.customers = new LinkedList();
     }
@@ -46,12 +46,15 @@ public class Bank {
     }
     public void handleCommand1(String input) {
         // Handle command 1
-        System.out.println(input);
+        String[] nodes = input.split(" ");
+        for (int i=0 ; i < nodes.length-1 ; i++ ) //-1 is for x in 1 s_1 s_2 x
+            System.out.println(customers.insertFirst(nodes[i]).account.name);
     }
 
     public String handleCommand2() {
         // Handle command 2
         String result = "";
+        customers.print();
         return result;
     }
 
