@@ -52,10 +52,9 @@ public class Bank {
     public void handleCommand1(String input) {
         // Handle command 1
         String[] nodes = input.split(" ");
-        for (int i=0 ; i < nodes.length-1 ; i++ ) //-1 is for x in 1 s_1 s_2 x
-        {
-            System.out.println(customers.insertFirst(nodes[i]).account.name);
-        }
+        Node talabkar = customers.insertFirst(nodes[0]);
+        Node bedehkar = customers.insertFirst(nodes[1]);
+        float value = Float.parseFloat(nodes[2]);
     }
 
     public String handleCommand2() {

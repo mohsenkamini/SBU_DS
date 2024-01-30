@@ -12,7 +12,7 @@ public class LinkedList {
     public Node find(String name) {
         Node result = this.head;
         for (int i =0 ; i < this.size ; i++,result=result.next) {
-            if (result.account.name.equals(name)){
+            if (result.customer.name.equals(name)){
                 return result;
             }
         }
@@ -21,16 +21,16 @@ public class LinkedList {
     public Node insertFirst(String name) {
         Node result;
         if (this.size==0) {
-            this.head.account.name=name;
+            this.head.customer.name=name;
             result=this.head;
         }
         else {
             result = find(name);
             if (result == null) {
                 Node temp = new Node();
-                temp.account.name=this.head.account.name;
+                temp.customer.name=this.head.customer.name;
                 temp.next=this.head.next;
-                this.head.account.name=name;
+                this.head.customer.name=name;
                 this.head.next=temp;
                 result=this.head;
             } else return result;
@@ -44,13 +44,13 @@ public class LinkedList {
         {
             temp=temp.next;
         }
-        return temp.account.name;
+        return temp.customer.name;
     }
     public void print() {
         Node temp = this.head;
         System.out.println("The list size is: "+this.size);
         for (int i=0 ; i < this.size ; i++) {
-            System.out.print(temp.account.name);
+            System.out.print(temp.customer.name);
             temp=temp.next;
             if (i+1 < this.size)
                 System.out.print(" -> ");
@@ -59,9 +59,9 @@ public class LinkedList {
 }
 
 class Node {
-    Account account;
+    Customer customer;
     Node next;
     public Node () {
-        this.account = new Account();
+        this.customer = new Customer();
     }
 }
