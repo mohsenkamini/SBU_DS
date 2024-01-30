@@ -8,6 +8,10 @@ class Menu {
         Bank bank = new Bank();
         for (int i = 0; i < q; i++) {
             String command = input.nextLine();
+            if (command.isEmpty()) {
+                i--;
+                continue; // Skip to the next iteration if the command is empty
+            }
             switch (command.charAt(0)) {
                 case '1':
                     bank.handleCommand1(command.substring(2));
@@ -28,6 +32,7 @@ class Menu {
                     bank.handleCommand6(command.substring(2));
                     break;
                 default:
+                    i--;
                     break;
             }
         }
